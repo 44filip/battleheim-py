@@ -7,5 +7,5 @@ class Character:
         
     def attack(self, target) -> None:
         target.health -= self.damage
-        target.health = max(target.hp, 0)
+        target.health = max(target.health, 0)
         # Prevents health value going below zero
