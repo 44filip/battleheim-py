@@ -27,7 +27,7 @@ class Hero(Character):
         if self.weapon.name is not "Fists":
             print(f"{self.name} dropped the {self.weapon.name}!")
             self.weapon = self.default_weapon
-        else: print("The Hero cannot drop their fists!")
+        else: print(f"The {self.name} cannot drop their fists!")
 
 class Enemy(Character):
     def __init__(self,
