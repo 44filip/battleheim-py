@@ -3,7 +3,7 @@ from character import Character
 hero = Character(name = "Hero", health = 100, damage = 5)
 enemy = Character(name = "Enemy", health = 100, damage = 3)
 
-while True:
+while hero.health > 0 and enemy.health > 0:
     hero.attack(enemy)
     enemy.attack(hero)
     
@@ -11,3 +11,8 @@ while True:
     print(f"Health of {enemy.name}: {enemy.health}")
     
     input()
+    
+if hero.health > enemy.health:
+    print("The Hero wins!")
+else:
+    print("The Enemy wins!")
