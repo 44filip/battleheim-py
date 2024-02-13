@@ -1,4 +1,5 @@
 from weapon import fists
+from health_bar import HealthBar
 
 class Character:
     def __init__(self, name: str, health: int):
@@ -12,6 +13,8 @@ class Character:
         target.health -= self.weapon.damage
         target.health = max(target.health, 0)
         # Prevents health value going below zero
+        target.health_bar.update()
+        # Sending out an update right after the action
         print(f"{self.name} dealt {self.weapon.damage} damage to {target.name} using (a) {self.weapon.name}")
      
     def drop(self) -> None:
@@ -23,6 +26,7 @@ class Character:
 class Hero(Character):
     def __init__(self, name: str, health: int):
         super().__init__(name, health)
+        self.health_bar = HealthBar(self, color="green")
         
     def equip(self, weapon) -> None:
         self.weapon = weapon
@@ -35,3 +39,4 @@ class Enemy(Character):
                  weapon: str):
         super().__init__(name, health)
         self.weapon = weapon
+        self.health_bar = HealthBar(self, color="red")
