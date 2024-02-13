@@ -14,5 +14,7 @@ while hero.health > 0 and enemy.health > 0:
     
 if hero.health > enemy.health:
     print("The Hero wins!")
+elif hero.health == enemy.health:
+    print("It's a draw!")
 else:
     print("The Enemy wins!")
