@@ -30,4 +30,4 @@ class HealthBar:
         self.max_value = entity.health_max
         self.current_value = entity.health
         self.is_colored = is_colored
-        self.color = self.colors.get(color)
+        self.color = self.colors.get(color) or self.colors["default"]
