@@ -18,5 +18,9 @@ class Hero(Character):
         super().__init__(name, health)
         
 class Enemy(Character):
-    def __init__(self, name: str, health: int):
+    def __init__(self,
+                 name: str,
+                 health: int,
+                 weapon: str):
         super().__init__(name, health)
+        self.weapon = weapon
