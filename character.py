@@ -1,7 +1,7 @@
 from weapon import fists
 
 class Character:
-    def __init__(self, name: str, health: int, damage: int):
+    def __init__(self, name: str, health: int):
         self.name = name
         self.health = health
         self.health_max = health
@@ -11,3 +11,11 @@ class Character:
         target.health -= self.weapon.damage
         target.health = max(target.health, 0)
         # Prevents health value going below zero
+        
+class Hero(Character):
+    def __init__(self, name: str, health: int):
+        super().__init__(name, health)
+        
+class Enemy(Character):
+    def __init__(self, name: str, health: int):
+        super().__init__(name, health)
