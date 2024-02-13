@@ -10,8 +10,8 @@ while hero.health > 0 and enemy.health > 0:
     hero.attack(enemy)
     enemy.attack(hero)
     
-    print(f"Health of {hero.name}: {hero.health}")
-    print(f"Health of {enemy.name}: {enemy.health}")
+    hero.health_bar.draw()
+    enemy.health_bar.draw()
     
     hero.drop()
     enemy.drop()
